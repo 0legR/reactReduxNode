@@ -16,4 +16,7 @@
 												.DS_Store
 												node_modules
 	for do not write to git folder node_modules
-14.
+14. git status
+15. git add .
+16. git commit -m 'initial commit'
+17. 
