@@ -19,4 +19,15 @@
 14. git status
 15. git add .
 16. git commit -m 'initial commit'
-17. 
+17. remove from index.html hello world and add div with id="app"
+18. in root folder create client folder within index.js
+19. npm i --save react react-dom
+20. into index.html add <script src="bundle.js"></script>
+	This need for webpack. Webpack bundle all client stuff to bundle.js
+21. import webpack stuff to server/index.js
+22. create webpack.config.dev.js and configure it
+23. npm i --save-dev webpack webpack-dev-middleware
+24. npm i --save-dev babel-loader
+25. add to .bablerc => "presets": ["es2015", "react"]
+26. npm i --save-dev babel-preset-react
+27. 
