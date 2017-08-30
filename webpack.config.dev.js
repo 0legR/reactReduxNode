@@ -26,6 +26,14 @@ export default {
 					'react-hot-loader',
 					'babel-loader'
 				]
+			},
+			{
+				test: /\.jsx$/,
+				include: path.join(__dirname, 'client'),
+				loaders: [
+					'react-hot-loader',
+					'babel-loader'
+				]
 			}
 		]
 	},

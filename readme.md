@@ -32,4 +32,5 @@
 26. npm i --save-dev babel-preset-react
 27. for hot update DOM add webpackHotNiddleware to server/index.js
 28. npm i --save-dev react-hot-loader webpack-hot-middleware
-29.
+29. npm i --save react-router-dom
+30. 

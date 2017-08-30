@@ -1,8 +1,8 @@
 import React from 'react';
 import {render} from 'react-dom';
-import App from './components/App';
+import MRouter from './components/Router';
 
 render(
-	<App />,
+	<MRouter />,
 	document.getElementById('app')
 );
