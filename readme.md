@@ -30,4 +30,6 @@
 24. npm i --save-dev babel-loader
 25. add to .bablerc => "presets": ["es2015", "react"]
 26. npm i --save-dev babel-preset-react
-27. 
+27. for hot update DOM add webpackHotNiddleware to server/index.js
+28. npm i --save-dev react-hot-loader webpack-hot-middleware
+29.
