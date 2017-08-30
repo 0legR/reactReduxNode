@@ -33,4 +33,4 @@
 27. for hot update DOM add webpackHotNiddleware to server/index.js
 28. npm i --save-dev react-hot-loader webpack-hot-middleware
 29. npm i --save react-router-dom
-30. 
+30. npm i --save lodash  => this's for map lodash (not used)
