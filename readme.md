@@ -12,7 +12,7 @@
 11. for restart server when update browser page => npm i --save-dev nodemon
 12. in package.json => "scripts": {
 	"server": "nodemon --watch server --exec babel-node -- server/index.js",}
-13. create in root folder .gitignore and add => 
+13. create in root folder .gitignore and add =>
 												.DS_Store
 												node_modules
 	for do not write to git folder node_modules
@@ -34,3 +34,6 @@
 28. npm i --save-dev react-hot-loader webpack-hot-middleware
 29. npm i --save react-router-dom
 30. npm i --save lodash  => this's for map lodash (not used)
+31. npm i --save axios
+32. npm i --save redux react-redux redux-thunk
+33.
