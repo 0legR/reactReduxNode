@@ -34,10 +34,12 @@ import TextFieldGroup from '../common/TextFieldGroup';
 	}
   handleOnSubmit(e) {
   	e.preventDefault();
-		this.setState({errors: {}, isLoading: true});
 		if (this.isValid()) {
+			this.setState({errors: {}, isLoading: true});
 			this.props.userSignupRequest(this.state)
-					.then(() => {})
+					.then(() => {
+						this.context.router.history.push('/');
+					})
 					.catch(
 						(error) => this.setState({errors: error.response.data, isLoading: false})
 					);
@@ -108,4 +110,8 @@ import TextFieldGroup from '../common/TextFieldGroup';
 
 SignupForm.propTypes = {
 	userSignupRequest: PropTypes.func.isRequired
+}
+
+SignupForm.contextTypes = {
+	router: PropTypes.object.isRequired
 }
