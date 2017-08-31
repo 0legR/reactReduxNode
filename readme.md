@@ -39,4 +39,4 @@
 33. npm i --save body-parser  => middleware for router node
 34. npm i --save validator  => for validate into node side
 35. npm i --save classnames => for work with addition classNames for instance has-error
-36. 
+36. npm i --save shortid

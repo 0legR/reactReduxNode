@@ -38,6 +38,10 @@ import TextFieldGroup from '../common/TextFieldGroup';
 			this.setState({errors: {}, isLoading: true});
 			this.props.userSignupRequest(this.state)
 					.then(() => {
+						this.props.addFlashMessages({
+							type: 'success',
+							text: 'You have signed up successfully! Welcome!'
+						});
 						this.context.router.history.push('/');
 					})
 					.catch(
@@ -109,7 +113,8 @@ import TextFieldGroup from '../common/TextFieldGroup';
 }
 
 SignupForm.propTypes = {
-	userSignupRequest: PropTypes.func.isRequired
+	userSignupRequest: PropTypes.func.isRequired,
+	addFlashMessages: PropTypes.func.isRequired
 }
 
 SignupForm.contextTypes = {
