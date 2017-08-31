@@ -36,4 +36,7 @@
 30. npm i --save lodash  => this's for map lodash (not used)
 31. npm i --save axios
 32. npm i --save redux react-redux redux-thunk
-33.
+33. npm i --save body-parser  => middleware for router node
+34. npm i --save validator  => for validate into node side
+35. npm i --save classnames => for work with addition classNames for instance has-error
+36. 
