@@ -39,14 +39,10 @@ class LoginForm extends Component {
 			this.setState({errors: {}, isLoading: true});
 			this.props.login(this.state)
 					.then((res) => {
-						addFlashMessages({
-							type: 'success',
-							text: 'You have logined up successfully! Welcome!'
-						});
 						this.context.router.history.push('/');
 					})
 					.catch(
-						(error) => this.setState({errors: error.response.data, isLoading: false})
+						(error) => this.setState({errors: error.response.data.errors, isLoading: false})
 					);
 		}
   }
@@ -56,6 +52,7 @@ class LoginForm extends Component {
     return (
       <form onSubmit={this.handleOnSubmit}>
         <h1>Please Login</h1>
+        {errors.form && <div className="alert alert-danger">{errors.form}</div>}
         <TextFieldGroup
           error={errors.identifier}
           label="Username / E-mail"

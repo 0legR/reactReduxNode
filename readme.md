@@ -50,3 +50,5 @@
 44. npm i --save bookshelf => for save from request to db
 45. npm i --save bcrypt => for encrypt passwort
 46. npm i --save bluebird
+47. npm i --save jsonwebtoken
+48.
