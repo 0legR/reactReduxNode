@@ -1,5 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
 import MRouter from './components/Router';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';

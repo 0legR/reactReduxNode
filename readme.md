@@ -40,3 +40,4 @@
 34. npm i --save validator  => for validate into node side
 35. npm i --save classnames => for work with addition classNames for instance has-error
 36. npm i --save shortid
+37. npm i --save-dev style-loader css-loader file-loader url-loader jquery  => for bootstrap local

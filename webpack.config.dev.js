@@ -15,7 +15,11 @@ export default {
 	plugins: [
 		new webpack.NoErrorsPlugin(),
 		new webpack.optimize.OccurrenceOrderPlugin(),
-		new webpack.HotModuleReplacementPlugin()
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.ProvidePlugin({
+			$: 'jquery',
+			jQuery: 'jquery'
+		})
 	],
 	module: {
 		loaders: [
@@ -37,6 +41,14 @@ export default {
 					'react-hot-loader',
 					'babel-loader'
 				]
+			},
+			{
+				test: /\.css$/,
+				loaders: 'style-loader!css-loader'
+			},
+			{
+				test: /\.(svg|ttf|woff|woff2|eot)$/,
+				loaders: 'url-loader?limit=5000'
 			}
 		]
 	},
