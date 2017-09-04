@@ -41,3 +41,12 @@
 35. npm i --save classnames => for work with addition classNames for instance has-error
 36. npm i --save shortid
 37. npm i --save-dev style-loader css-loader file-loader url-loader jquery  => for bootstrap local
+38. npm i --save knex => for db migration
+39. npm i -g knex => for globaly
+40. npm i --save mysql
+41. knex init
+42. knex migrate:make users
+43. knex migrate:latest
+44. npm i --save bookshelf => for save from request to db
+45. npm i --save bcrypt => for encrypt passwort
+46. 
