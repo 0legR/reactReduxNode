@@ -14,16 +14,37 @@ import TextFieldGroup from '../common/TextFieldGroup';
             passwordConfirmation: '',
             timezone: '',
 						errors: {},
-						isLoading: false
+						isLoading: false,
+						invalid: false
       }
       this.handleOnChange = this.handleOnChange.bind(this);
       this.handleOnSubmit = this.handleOnSubmit.bind(this);
+			this.handleIsUserExists = this.handleIsUserExists.bind(this);
   }
   handleOnChange(e) {
   		this.setState({
   			[e.target.name]: e.target.value
   		});
   }
+	handleIsUserExists(e) {
+		const field = e.target.name;
+		const val = e.target.value;
+		if (val !== '') {
+			this.props.isUserExists(val).then(res => {
+				let errors = this.state.errors;
+				let invalid;
+
+				if (res.data.user) {
+					errors[field] = 'There is user with such '+field;
+					invalid = true;
+				} else {
+					errors[field] = '';
+					invalid = false;
+				}
+				this.setState({errors, invalid});
+			});
+		}
+	}
 	isValid() {
 		const {errors, isValid} = validateInput(this.state);
 
@@ -63,6 +84,7 @@ import TextFieldGroup from '../common/TextFieldGroup';
 							error={errors.username}
 							label="Username"
 							onChange={this.handleOnChange}
+							isUserExists={this.handleIsUserExists}
 							value={this.state.username}
 							field="username"
 						/>
@@ -70,6 +92,7 @@ import TextFieldGroup from '../common/TextFieldGroup';
 							error={errors.email}
 							label="E-mail"
 							onChange={this.handleOnChange}
+							isUserExists={this.handleIsUserExists}
 							value={this.state.email}
 							field="email"
 							type="email"
@@ -105,7 +128,9 @@ import TextFieldGroup from '../common/TextFieldGroup';
 							{errors.timezone && <span className="help-block">{errors.timezone}</span>}
             </div>
             <div className="form-group">
-              <button disabled={this.state.isLoading} className="btn btn-primary btn-lg">Sign up!</button>
+              <button
+								disabled={this.state.isLoading || this.state.invalid}
+								className="btn btn-primary btn-lg">Sign up!</button>
             </div>
         </form>
     );
@@ -114,7 +139,8 @@ import TextFieldGroup from '../common/TextFieldGroup';
 
 SignupForm.propTypes = {
 	userSignupRequest: PropTypes.func.isRequired,
-	addFlashMessages: PropTypes.func.isRequired
+	addFlashMessages: PropTypes.func.isRequired,
+	isUserExists: PropTypes.func.isRequired
 }
 
 SignupForm.contextTypes = {
