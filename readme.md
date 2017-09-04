@@ -49,4 +49,4 @@
 43. knex migrate:latest
 44. npm i --save bookshelf => for save from request to db
 45. npm i --save bcrypt => for encrypt passwort
-46. 
+46. npm i --save bluebird
