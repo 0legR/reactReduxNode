@@ -51,4 +51,5 @@
 45. npm i --save bcrypt => for encrypt passwort
 46. npm i --save bluebird
 47. npm i --save jsonwebtoken
-48.
+48. npm i --save jwt-decode
+49. 
