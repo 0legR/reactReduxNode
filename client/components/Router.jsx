@@ -5,13 +5,14 @@ import Greetings from './Greetings';
 import SignupPage from './signup/SignupPage';
 import LoginPage from './login/LoginPage';
 import NewEventPage from './events/NewEventPage';
+import requireAuth from '../utils/requireAuth';
 
 const MRouter = () => <Router>
 	<App>
 		<Route exact path="/" component={Greetings} />
 		<Route path="/signup" component={SignupPage} />
 		<Route path="/login" component={LoginPage} />
-		<Route path="/new-event" component={NewEventPage} />
+		<Route path="/new-event" component={requireAuth(NewEventPage)} />
 	</App>
 </Router>;
 
