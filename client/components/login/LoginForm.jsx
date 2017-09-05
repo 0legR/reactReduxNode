@@ -2,9 +2,8 @@ import React, {Component} from 'react';
 import TextFieldGroup from '../common/TextFieldGroup';
 import validateInput from '../../../server/shared/validations/login';
 import {connect} from 'react-redux';
-import {login} from '../../actions/login';
+import {login} from '../../actions/authActions';
 import PropTypes from 'prop-types';
-import {addFlashMessages} from '../../actions/flashMessages';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -79,12 +78,11 @@ class LoginForm extends Component {
 }
 
 LoginForm.propTypes = {
-  login: PropTypes.func.isRequired,
-  addFlashMessages: PropTypes.func.isRequired
+  login: PropTypes.func.isRequired
 }
 
 LoginForm.contextTypes = {
   router: PropTypes.object.isRequired
 }
 
-export default connect(null, {login, addFlashMessages})(LoginForm);
+export default connect(null, {login})(LoginForm);
